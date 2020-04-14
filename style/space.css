@@ -1,0 +1,301 @@
+/*Импорт стилей, шрифтов и иконок*/
+/*Сброс CSS*/
+@import url("https://marksheet.io/css/reset.css");
+/*А может быть лудше Normalize*/
+@import url("https://github.com/necolas/normalize.css/blob/master/normalize.css");
+@import url("");/*Дополнительные шрифты из Google Font*/
+/*Базовые стили*/
+@media (max-width:1024px){
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width:800px){
+    header > div.container ,
+    section .container ,
+    .content .block,
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .moon-rocket {
+        order: -1;
+        width: 300px;
+    }
+}
+html {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+	font-family: Verdana, sans-serif;
+	font size: 12px;
+}
+/*контейнер для содержимого страницы*/
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px; /*Максимальная ширина может иметь другое значение*/
+    margin: 0 auto;
+}
+/*Предустановки*/
+/*Предусьтановки для установки flex элементов: row - горезонтально, collumn - вертекально*/
+.row{
+	display: flex;
+    flex-direction: row;
+}
+.column{
+	display: flex;
+    flex-direction: column;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.block {
+	display: flex;
+	width: 100%;
+	margin: 0 auto;
+}
+.btn { /*Свойства для создания кнопки через класс class="btn"*/
+	position: relative; /*Фиксируем элементы относительно его исходного места*/
+	display: flex; /*Делаем flex-контейнер*/
+	width: 195px; /*Устанавливаем ширину элемента*/
+	padding: 0 25px; /*Выставляем внутренние отступы*/
+	font-family: Verdana, sans-serif; /*Устанавливаем шриффты*/
+	font-weight: bold; /*Полужирный текст*/
+	font-size: lem; /*Размер шрифта как 100% от общего рамера шрифта (т.е.=14px)*/
+	line-height: 50px; /*Межстрочный интервал*/
+	text-decoration: none; /*Сбрасываем первоночальный стиль*/
+	text-transform: uppercase; /*Деслаем все буквы заглавными*/
+	vertical-align: top; /*Вертикальное выравнивание текста по верху*/
+	color: #222222; /*Цвет шрифта*/
+	border-radius: 50px; /*Закругляет края кнопки*/
+}
+.btn::after { /*позволяет вставить после html-тега обект*/
+	content: ""; /**/
+	position: absolute; /*Делаем у элемента абсолютное позецирование*/
+	right: 20px;
+	top: 17px;
+	width: 19px;
+	height: 16px;
+	background-image: url(images/right-arrow-dark.png); /*Устанавлеваем сам элемент*/
+	background-repeat: no-repeat; /*Делает так, чтобы элемент не повторялся*/
+	background-position: 0 0; /*Выравниваем элемент*/
+}
+.btn-yellow{ /*Класс class="btn-yellow" для установки желтого цвета кнопки*/
+	background-color: #feca30; /*Меняем цвет фона на желтый*/
+}
+.btn-yellow:hover { /*Класс class="btn-yellow" для установки цвета кнопки при наведении*/
+	background-color: #fff; /*Меняем цвет фона на черный*/
+}
+.btn-grey { /*Предустановка для серого цвета кнопки*/
+	width: 215px; /*Ширина */
+	color: #fff; /*Цвет шрифта*/
+	background-color: #222; /*Цвет заднего фона*/
+}
+.btn-grey::after {
+	background-image: url(images/right-arrow-white.png); /*Вставка элемента*/
+}
+.btn-grey:hover {
+	background-color: #676767; /*Цвет заднего фона при наведении*/
+}
+/*Гибкая верстка*/
+.col-1{
+    display: flex;
+    flex: 1;
+}
+.col-2{
+    display: flex;
+    flex: 2;
+}
+.col-3{
+    display: flex;
+    flex: 3;
+}
+.col-4{
+    display: flex;
+    flex: 4;
+}
+.col-5{
+    display: flex;
+    flex: 5;
+}
+.col-6{
+    display: flex;
+    flex: 6;
+}
+.btn-grey:hover {
+	width: 215px;
+	color: #fff;
+	background-color: #222;
+}
+@media(max-width: 800px){
+    .container{
+        flex-direction: column;
+    }
+	.moon-toor {
+		flex-direction: column-reverse;
+	}
+	.cont-position {
+		flex-direction: column;
+	}
+}
+/*Шапка сайта*/
+header{ /*Свойства для тега <header>:*/
+    flex: 0 0 auto; /*Прижимаем шапку страницы к верху*/
+	background-color: #1c191c; /*Цвет фона*/
+	font-family:sans-serif;/*Высота блока*/
+	font-size: 0.9em; /*Размер шрифта определен как 90% от общего шрифта, который написан для тега <body> =12px*/
+}
+header > div.container { /*Свойство строго для тега <div> с классом class="container" который находиться в <header>:*/
+	height: 100%; /*Высота блока 100% от его родителя, т.е. <header>*/
+	padding-top:50px; /*Выравнивание по вертекали: прижимаем все внутрености к нижнему краю блока <header>*/
+}
+header ul{ /*Свойство только для тега <ul>, который находиться в <header>:*/
+	display: flex; /*Делаем для ul flexbox-кнтейнер*/
+	padding-top: 50px; /*Внутренний отступ снизу*/
+}
+header li{
+	color: #DCDCDC; /*Цвет шрифта обычного текста*/
+}
+header li a{ /*Свойства только для тега <li> который находиться в <header>*/
+	padding: 50px 10px 10px 10px; /*Внутриние отступы по 4-ем сторонам*/
+	margin-right: 10px; /*Внешний отступ справа*/
+	color: yellow; /*Цвет шрифта для ссылок*/ /*ЕСЛИ ЧТО ВНЕСТИ ПОПРАВКУ*/
+	text-decoration: none; /*Убираем подчеркивание текста в сылках*/
+}
+.header-icon { /*Свойства для класса class="header-icon"*/
+	display: flex; /*Делаем flex-контейнер, чобы выровнять иконки по вертекали*/
+	padding-top:50px;/*Внутренний отступ снизу*/
+	align-items: center; /*Выравнивание элементов по вертикали (по центу)*/
+}
+.header-icon img { /*Свойства только для тега <img> с классом class=".header-icon"*/
+	padding-right: 20px; /*Внутрений отступ справа*/
+}
+/*Основное содержимое свайта*/
+.moon-toor { /*Свойства класса class="moon-toor"*/
+	flex: 1 0 auto; /*Фиксиуем положение*/
+	flex-wrap: wrap; /*Преренос <div> под другой <div> когда экран меньше 800px*/
+	background-color: #1c191c; /*Задний фон*/
+	padding: 30px 0; /*Втурение тступы*/
+}
+.moon-header { /*Свойства класса class="moon-toor", для стилиза*/
+	width: 300px; /*Обозначим ширину блока, чтобы не растягивался на разных экранах*/
+	margin: 0 5vw; /*Внешние отступы заданы относительными еденицами vm (% от экранной ширины)*/
+	padding: 68px 0; /*Внутрение отступы только сверху и снизу*/
+}
+.moon-toor h1 { /*Свойства только для тега <h1> который находиться в блоке с классом class="moon-toor"*/
+	margin: 40px 0;  /*Внутрение отступы только сверху и снизу*/
+	font-family: Conrier new, monospace;
+	font-weight: bold;
+	font-size: 3.2em; /*Размер шрифта определен как 320% от общего рамера шрифта (т.е. ~45px)*/
+	line-height: 50px;
+	color: #fff;
+}
+.moon-toor p { /*Свойства только для тега <p>, который находиться в блоке с классом class="moon-toor"*/
+	margin-bottom: 50px;
+	padding-left: 5px;
+	line-height: 22px;
+	color: #DCDCDC;
+	font-size: 1.1em; /*Размер шрифта определен как 110% от общего рамера шрифта (т.е. ~16px)*/
+}
+.moon-toor img { /*Свойства только для тега <img>, который находиться в блоке с классом class="moon-toor"*/
+	width: 100%;
+	max-width: 438px; /*Настраеваем максимальный размер изображения*/
+	margin: 30px 0; /*Внешние отступы только сверху и снизу*/
+}
+.advantages { /*Свойства для класса class="advantages"*/
+	flex: 1 0 auto; /*Фиксиуем положение*/
+	padding: 55px 0 85px 0;  /*Внутрение отступы*/
+	background-color: #000; /*Настраиваем задний фон*/
+	color: #fff; /*Настраеваем цвет шрифта*/
+}
+.advantages div { /*Свойства только для тегов <div>, которые находяться в блоке с класом class="advantages"*/
+	justify-content: space-around; /*flex-лементы отоброжаються с равным интервалом вокруг каждого flex-элемента, включая первый и последний*/
+}
+.advantages .block-item { /*Свойства только для классов class="advantages", которые находяться в блоке с классом class="advantages"*/
+	max-width: 200px; /*Устанавливаем максимальную ширину блоков*/
+}
+.advantages img { /*Свойства только для тега <img>, который находиться в блоке с классом class="advantages"*/
+	padding: 30px 0; /*Внутрение отступы только сверху и снизу*/
+}
+.content { /*Свойства для класса class="content"*/
+	flex: 1 0; /*Фиксиуем положение*/
+	padding: 55px 0; /*Внутрение отступы только сверху и снизу*/
+}
+.content div { /*Свойства только для тегов <div>, которые находяться в блоке с класом class="content"*/
+	justify-content: space-between; /*flex-элементы отоброжаються с равным интервалом между ними, первый и последний flex-элементы выравниваються по краям*/
+}
+.left-column { /*Свойства для класса class="left-column"*/
+	max-width: 440px; /*Установим максимальную ширину блока = ширине map.jpg(440px)*/
+	padding: 30px 30px 30px 0; /*Внутрение отступы*/
+}
+.right-column { /*Свойства для класса class="right-column"*/
+	max-width: 440px; /*Установим максимальную ширину блока = ширине map.jpg(440px)*/
+	padding: 30px 0; /*Внутрение отступы только сверху и снизу*/
+}
+.content img{
+	width: 100%;
+	max-width: 440px; /*Установим максимальную ширину блока = ширине map.jpg(440px)*/
+}
+.content h2{ /*Свойства только для тегов <h2>, которые находяться в блоке с класом class="content"*/
+	font-family: Courier nev, sans-serif;
+	font-size: 1.6em;
+	font-weight: bold;
+	padding-bottom: 40px;
+}
+.content p{
+	line-height: 20px;
+	padding-bottom: 15px;
+}
+.content ul{
+	margin-left: 25px;
+}
+.content li{
+	position: relative;
+	padding-bottom: 15px;
+}
+.content li::before{
+	content: "";
+	position: absolute;
+	left: -25px;
+	top: 5px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: #feca30;
+}
+/*Подвал*/
+footer{
+    flex: 0 0 auto;
+	padding: 85px 0 85px 0;
+	background-color: #000;
+	color: #fff;
+}
+.copyright {
+	color: #303030;
+	padding-top: 100px;
+}
+.footer h3 {
+	margin: 20px 20px 40px 0;
+	padding-bottom: 20px;
+	color: #fff;
+	text-transform: uppercase;
+	border-bottom: 1px solid #303030;
+}
+.footer h3 a {
+	color: #fff;
+	text-decoration: none;
+}
+.footer li {
+	margin-bottom: 20px;
+}
+.footer li a {
+	color: #DCDCDC;
+	text-decoration: none;
+}
